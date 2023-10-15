@@ -31,7 +31,7 @@ int main() {
     //Auto typ with unary operator  test
     auto c = -b;
 
-    auto d = (a+c)*3;
+    Vec2 d = (a+c)*3;
 
     std::cout << a.x() << " " << a.y() << std::endl;
     std::cout << b.x() << " " << b.y() << std::endl;
