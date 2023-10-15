@@ -1,0 +1,10 @@
+^C:\USERS\SASCH\ONEDRIVE\STUDIUM\2324\EFF-C++\C++\CPP-EXAMPLES\CREATTYPE\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/sasch/OneDrive/Studium/2324/Eff-C++/C++/CPP-Examples/CreatType -BC:/Users/sasch/OneDrive/Studium/2324/Eff-C++/C++/CPP-Examples/CreatType/build --check-stamp-file C:/Users/sasch/OneDrive/Studium/2324/Eff-C++/C++/CPP-Examples/CreatType/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
