@@ -1,0 +1,3 @@
+C:/Users/sasch/OneDrive/Studium/2324/Eff-C++/C++/CPP-Examples/WelcomeMSG/build/CMakeFiles/hello.dir
+C:/Users/sasch/OneDrive/Studium/2324/Eff-C++/C++/CPP-Examples/WelcomeMSG/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/sasch/OneDrive/Studium/2324/Eff-C++/C++/CPP-Examples/WelcomeMSG/build/CMakeFiles/ZERO_CHECK.dir

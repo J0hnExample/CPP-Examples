@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\sasch\OneDrive\Studium\2324\Eff-C++\C++\CPP-Examples\HelloWorld\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\sasch\OneDrive\Studium\2324\Eff-C++\C++\CPP-Examples\HelloWorld\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{19C40B96-8647-30A7-9112-2F03915B532B}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
