@@ -1,6 +1,27 @@
-#include <iostream>
+// Super Complicated IO Example
 
-int main() {
-    std::cout << "Hello, World!" << std::endl;
-    return 0;   
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class WelcomeMessenger{
+    	public:
+        WelcomeMessenger(string welcomeToWhat)
+        : mWelcomeToWhat(welcomeToWhat){
+
+        }
+        string greeting(string whom){
+            return string("Hello, ") + whom + ", welcome to "
+            + mWelcomeToWhat + "!";
+        }
+        private:
+        string mWelcomeToWhat;
+};
+
+int main(){
+    WelcomeMessenger msg("C++ World");
+    cout << msg.greeting("Mary") << endl;
+    cout << msg.greeting("John") << endl;
+    return 0;
 }
