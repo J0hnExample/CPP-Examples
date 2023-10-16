@@ -1,0 +1,10 @@
+^C:\USERS\SASCH\ONEDRIVE\STUDIUM\2324\EFF-C++\C++\CPP-EXAMPLES\NEXT\BUILD\CMAKEFILES\46EA09905AC5AE5EBE4D1D7FF42EC0B2\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/sasch/OneDrive/Studium/2324/Eff-C++/C++/CPP-Examples/Next -BC:/Users/sasch/OneDrive/Studium/2324/Eff-C++/C++/CPP-Examples/Next/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/sasch/OneDrive/Studium/2324/Eff-C++/C++/CPP-Examples/Next/build/C++.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

@@ -10,6 +10,8 @@ public:
     void set_x(float x);
     void set_y(float y);
 
+    
+
     // Unary operator method
     Vec2 Vec2::operator-() const 
     {

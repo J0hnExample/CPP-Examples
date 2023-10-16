@@ -1,5 +1,6 @@
 /*Shows how to use an Own Type
 Unary arithmetic operators
+try to modify Call By Value
 */
 
 #include <iostream>
@@ -19,11 +20,17 @@ void Vec2::set_y(float y)
 {
     y_ = y;
 }
-
+//Call By Value
+void try_to_modify(Vec2 v)
+{
+    v.set_x(3.14f);
+}
 int main() {
     Vec2 a(2,2);
     //Copy 
     Vec2 b = a;
+    //Try to Modify
+    try_to_modify(a);
     //Manipulating B
     b.set_x(3);
     //Vec2 c();
