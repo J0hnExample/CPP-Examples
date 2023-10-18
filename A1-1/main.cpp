@@ -1,6 +1,7 @@
 #include <iostream>
 #include "test11.h"
-#include "vec3f.cpp"
+#include "vec3f.h"
+
 
 int main()
 {
@@ -8,16 +9,16 @@ int main()
 
 
     // Test vector a
-    Vec3f a;
-    Vec3f s;
+    my::Vec3f a;
+    my::Vec3f s;
 
     // Test vector b
-    const Vec3f b(1, 2, 3);
-    const Vec3f c(1, 2, 3);
+    const my::Vec3f b(1, 2, 3);
+    const my::Vec3f c(1, 2, 3);
 
     std::cout << "b == c is " << (b == c) << std::endl;
 
-    Vec3f y = b - c;
+    my::Vec3f y = b - c;
 
     size_t size = a.getSize();
 

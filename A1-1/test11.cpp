@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cassert>
 #include <typeinfo>
+
 using namespace std;
 
 #include "vec3f.h"
