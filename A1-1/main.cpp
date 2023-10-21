@@ -19,11 +19,12 @@ int main()
     std::cout << "b == c is " << (b == c) << std::endl;
 
     my::Vec3f y = b - c;
-
+    my::Vec3f z = -b;
     size_t size = a.getSize();
 
     a[1] = 4;
 
+    std::cout << "z = -b" << z[1] << std::endl;
     std::cout << "Array Size: " << size << std::endl;
     std::cout << "default_werte a " << a[1] << std::endl;
     std::cout << "default_werte const " << b[0] << std::endl;

@@ -102,5 +102,14 @@ namespace my
             temp.arr[2] -= rhs.arr[2];
             return temp;
         }
+        // -Pre Operator
+        Vec3f operator-() const
+        {
+            Vec3f temp(*this);
+            temp.arr[0] *= -1;
+            temp.arr[1] *= -1;
+            temp.arr[2] *= -1;
+            return temp;
+        }
     };
 }
