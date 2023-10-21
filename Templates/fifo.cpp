@@ -3,6 +3,7 @@
 #include <array>
 #include <string>
 
+//This part creats no code
 template<typename T>
 class Fifo{
     std::array<T, 100> data_;
@@ -18,11 +19,16 @@ public:
         return result;
     }
 };
+//this part creats code into the template
 
 void use_fifo(){
+    //Creating instances of the template class
+    //for float
     Fifo<float> ff;
+    //for string
     //std::string is explecitly to use standard libary string type from std namespace
     Fifo<std::string> sf;
+    //putting values into the fifos
     ff.put(5.3);
     sf.put("Hello");
     std::cout << ff.get() << std::endl;
