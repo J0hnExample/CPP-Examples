@@ -4,7 +4,8 @@
 #include <string>
 
 //This part creats no code
-template<typename T>
+//Default value for the template <typename T = float>
+template<typename T = float>
 class Fifo{
     std::array<T, 100> data_;
     size_t begin_=0, ende_=0;

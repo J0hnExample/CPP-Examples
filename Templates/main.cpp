@@ -6,8 +6,10 @@ int main() {
 
     use_fifo();
 
-    Fifo<float> f;
+    //Default value for the template <typename T = float>
+    Fifo<> f;
     f.put(5);
+    //String fifo
     Fifo<std::string> s;
     s.put("Hello");
     s.put("again");
