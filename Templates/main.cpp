@@ -23,5 +23,11 @@ int main() {
     std::cout << s.get() << std::endl;
     std::cout << s.get() << std::endl;
     std::cout << s.get() << std::endl;
+
+    std::cout << mult<int>(1,4) << std::endl;
+    std::cout << mult<>(6.5,4.5) << std::endl;
+
+    //Weiter mit template merhoden 2. video 14 min
+
     return 0;   
 }
