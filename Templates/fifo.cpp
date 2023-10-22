@@ -2,12 +2,29 @@
 #include <iostream>
 #include <array>
 #include <string>
+#include <concepts>
 
 //This part creats no code
 //Default value for the template <typename T = float>
 //Setting a default parameter N = 100
 //Set a second parameter N = 100 while instantiating
-template<typename T = float, int N = 100>
+template<typename T = float, int N = 100> 
+
+class Fifo{
+    //array with the size N
+    std::array<T, N> data_;
+    size_t begin_=0, ende_=0;
+public:
+    void put(T value){
+        data_[ende_] = value;
+        if(++ende_ == N) ende_=0;
+    }
+    T get(){
+        auto result=data_[begin_];
+        if(++begin_ == N) begin_=0;
+        return result;
+    }
+};
 //template<auto T, int N = 100>
 class Fifo{
     //array with the size N
