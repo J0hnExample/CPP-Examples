@@ -24,7 +24,7 @@ events:
       The output was:
       0
       MSBuild-Version 17.7.2+d6990bcfa für .NET Framework
-      Der Buildvorgang wurde am 21.10.2023 18:11:33 gestartet.
+      Der Buildvorgang wurde am 24.10.2023 10:00:23 gestartet.
       
       Projekt "C:\\Users\\sasch\\OneDrive\\Studium\\2324\\Eff-C++\\C++\\CPP-Examples\\A1-2\\build\\CMakeFiles\\3.27.7\\CompilerIdC\\CompilerIdC.vcxproj" auf Knoten "1" (Standardziele).
       PrepareForBuild:
@@ -52,7 +52,7 @@ events:
           0 Warnung(en)
           0 Fehler
       
-      Verstrichene Zeit 00:00:01.58
+      Verstrichene Zeit 00:00:01.69
       
       
       Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
@@ -78,7 +78,7 @@ events:
       The output was:
       0
       MSBuild-Version 17.7.2+d6990bcfa für .NET Framework
-      Der Buildvorgang wurde am 21.10.2023 18:11:36 gestartet.
+      Der Buildvorgang wurde am 24.10.2023 10:00:25 gestartet.
       
       Projekt "C:\\Users\\sasch\\OneDrive\\Studium\\2324\\Eff-C++\\C++\\CPP-Examples\\A1-2\\build\\CMakeFiles\\3.27.7\\CompilerIdCXX\\CompilerIdCXX.vcxproj" auf Knoten "1" (Standardziele).
       PrepareForBuild:
@@ -106,7 +106,7 @@ events:
           0 Warnung(en)
           0 Fehler
       
-      Verstrichene Zeit 00:00:01.39
+      Verstrichene Zeit 00:00:01.06
       
       
       Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
@@ -125,8 +125,8 @@ events:
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "C:/Users/sasch/OneDrive/Studium/2324/Eff-C++/C++/CPP-Examples/A1-2/build/CMakeFiles/CMakeScratch/TryCompile-8i9hqb"
-      binary: "C:/Users/sasch/OneDrive/Studium/2324/Eff-C++/C++/CPP-Examples/A1-2/build/CMakeFiles/CMakeScratch/TryCompile-8i9hqb"
+      source: "C:/Users/sasch/OneDrive/Studium/2324/Eff-C++/C++/CPP-Examples/A1-2/build/CMakeFiles/CMakeScratch/TryCompile-kas932"
+      binary: "C:/Users/sasch/OneDrive/Studium/2324/Eff-C++/C++/CPP-Examples/A1-2/build/CMakeFiles/CMakeScratch/TryCompile-kas932"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS /W3"
       CMAKE_EXE_LINKER_FLAGS: "/machine:X86"
@@ -134,39 +134,39 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/sasch/OneDrive/Studium/2324/Eff-C++/C++/CPP-Examples/A1-2/build/CMakeFiles/CMakeScratch/TryCompile-8i9hqb'
+        Change Dir: 'C:/Users/sasch/OneDrive/Studium/2324/Eff-C++/C++/CPP-Examples/A1-2/build/CMakeFiles/CMakeScratch/TryCompile-kas932'
         
-        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_7e976.vcxproj /p:Configuration=Debug /p:Platform=win32 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_5f948.vcxproj /p:Configuration=Debug /p:Platform=win32 /p:VisualStudioVersion=17.0 /v:n
         MSBuild-Version 17.7.2+d6990bcfa für .NET Framework
-        Der Buildvorgang wurde am 21.10.2023 18:11:38 gestartet.
+        Der Buildvorgang wurde am 24.10.2023 10:00:27 gestartet.
         
-        Projekt "C:\\Users\\sasch\\OneDrive\\Studium\\2324\\Eff-C++\\C++\\CPP-Examples\\A1-2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8i9hqb\\cmTC_7e976.vcxproj" auf Knoten "1" (Standardziele).
+        Projekt "C:\\Users\\sasch\\OneDrive\\Studium\\2324\\Eff-C++\\C++\\CPP-Examples\\A1-2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-kas932\\cmTC_5f948.vcxproj" auf Knoten "1" (Standardziele).
         PrepareForBuild:
-          Das Verzeichnis "cmTC_7e976.dir\\Debug\\" wird erstellt.
-          Das Verzeichnis "C:\\Users\\sasch\\OneDrive\\Studium\\2324\\Eff-C++\\C++\\CPP-Examples\\A1-2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8i9hqb\\Debug\\" wird erstellt.
-          Das Verzeichnis "cmTC_7e976.dir\\Debug\\cmTC_7e976.tlog\\" wird erstellt.
+          Das Verzeichnis "cmTC_5f948.dir\\Debug\\" wird erstellt.
+          Das Verzeichnis "C:\\Users\\sasch\\OneDrive\\Studium\\2324\\Eff-C++\\C++\\CPP-Examples\\A1-2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-kas932\\Debug\\" wird erstellt.
+          Das Verzeichnis "cmTC_5f948.dir\\Debug\\cmTC_5f948.tlog\\" wird erstellt.
         InitializeBuildStatus:
-          "cmTC_7e976.dir\\Debug\\cmTC_7e976.tlog\\unsuccessfulbuild" wird erstellt, da "AlwaysCreate" angegeben wurde.
-          Aktualisieren des Timestamps von "cmTC_7e976.dir\\Debug\\cmTC_7e976.tlog\\unsuccessfulbuild".
+          "cmTC_5f948.dir\\Debug\\cmTC_5f948.tlog\\unsuccessfulbuild" wird erstellt, da "AlwaysCreate" angegeben wurde.
+          Aktualisieren des Timestamps von "cmTC_5f948.dir\\Debug\\cmTC_5f948.tlog\\unsuccessfulbuild".
         ClCompile:
-          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.37.32822\\bin\\HostX86\\x86\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /Oy- /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_7e976.dir\\Debug\\\\" /Fd"cmTC_7e976.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /analyze- /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.27\\Modules\\CMakeCCompilerABI.c"
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.37.32822\\bin\\HostX86\\x86\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /Oy- /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_5f948.dir\\Debug\\\\" /Fd"cmTC_5f948.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /analyze- /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.27\\Modules\\CMakeCCompilerABI.c"
           Microsoft (R) C/C++-Optimierungscompiler Version 19.37.32824 für x86
           CMakeCCompilerABI.c
           Copyright (C) Microsoft Corporation. Alle Rechte vorbehalten.
-          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /Oy- /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_7e976.dir\\Debug\\\\" /Fd"cmTC_7e976.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /analyze- /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.27\\Modules\\CMakeCCompilerABI.c"
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /Oy- /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_5f948.dir\\Debug\\\\" /Fd"cmTC_5f948.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /analyze- /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.27\\Modules\\CMakeCCompilerABI.c"
         Link:
-          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.37.32822\\bin\\HostX86\\x86\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\sasch\\OneDrive\\Studium\\2324\\Eff-C++\\C++\\CPP-Examples\\A1-2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8i9hqb\\Debug\\cmTC_7e976.exe" /INCREMENTAL /ILK:"cmTC_7e976.dir\\Debug\\cmTC_7e976.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/sasch/OneDrive/Studium/2324/Eff-C++/C++/CPP-Examples/A1-2/build/CMakeFiles/CMakeScratch/TryCompile-8i9hqb/Debug/cmTC_7e976.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/sasch/OneDrive/Studium/2324/Eff-C++/C++/CPP-Examples/A1-2/build/CMakeFiles/CMakeScratch/TryCompile-8i9hqb/Debug/cmTC_7e976.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_7e976.dir\\Debug\\CMakeCCompilerABI.obj
-          cmTC_7e976.vcxproj -> C:\\Users\\sasch\\OneDrive\\Studium\\2324\\Eff-C++\\C++\\CPP-Examples\\A1-2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8i9hqb\\Debug\\cmTC_7e976.exe
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.37.32822\\bin\\HostX86\\x86\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\sasch\\OneDrive\\Studium\\2324\\Eff-C++\\C++\\CPP-Examples\\A1-2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-kas932\\Debug\\cmTC_5f948.exe" /INCREMENTAL /ILK:"cmTC_5f948.dir\\Debug\\cmTC_5f948.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/sasch/OneDrive/Studium/2324/Eff-C++/C++/CPP-Examples/A1-2/build/CMakeFiles/CMakeScratch/TryCompile-kas932/Debug/cmTC_5f948.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/sasch/OneDrive/Studium/2324/Eff-C++/C++/CPP-Examples/A1-2/build/CMakeFiles/CMakeScratch/TryCompile-kas932/Debug/cmTC_5f948.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_5f948.dir\\Debug\\CMakeCCompilerABI.obj
+          cmTC_5f948.vcxproj -> C:\\Users\\sasch\\OneDrive\\Studium\\2324\\Eff-C++\\C++\\CPP-Examples\\A1-2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-kas932\\Debug\\cmTC_5f948.exe
         FinalizeBuildStatus:
-          Die Datei "cmTC_7e976.dir\\Debug\\cmTC_7e976.tlog\\unsuccessfulbuild" wird gelöscht.
-          Aktualisieren des Timestamps von "cmTC_7e976.dir\\Debug\\cmTC_7e976.tlog\\cmTC_7e976.lastbuildstate".
-        Die Erstellung von Projekt "C:\\Users\\sasch\\OneDrive\\Studium\\2324\\Eff-C++\\C++\\CPP-Examples\\A1-2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8i9hqb\\cmTC_7e976.vcxproj" ist abgeschlossen (Standardziele).
+          Die Datei "cmTC_5f948.dir\\Debug\\cmTC_5f948.tlog\\unsuccessfulbuild" wird gelöscht.
+          Aktualisieren des Timestamps von "cmTC_5f948.dir\\Debug\\cmTC_5f948.tlog\\cmTC_5f948.lastbuildstate".
+        Die Erstellung von Projekt "C:\\Users\\sasch\\OneDrive\\Studium\\2324\\Eff-C++\\C++\\CPP-Examples\\A1-2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-kas932\\cmTC_5f948.vcxproj" ist abgeschlossen (Standardziele).
         
         Der Buildvorgang wurde erfolgreich ausgeführt.
             0 Warnung(en)
             0 Fehler
         
-        Verstrichene Zeit 00:00:01.51
+        Verstrichene Zeit 00:00:01.38
         
       exitCode: 0
   -
@@ -178,8 +178,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "C:/Users/sasch/OneDrive/Studium/2324/Eff-C++/C++/CPP-Examples/A1-2/build/CMakeFiles/CMakeScratch/TryCompile-ch7elj"
-      binary: "C:/Users/sasch/OneDrive/Studium/2324/Eff-C++/C++/CPP-Examples/A1-2/build/CMakeFiles/CMakeScratch/TryCompile-ch7elj"
+      source: "C:/Users/sasch/OneDrive/Studium/2324/Eff-C++/C++/CPP-Examples/A1-2/build/CMakeFiles/CMakeScratch/TryCompile-6fsbu7"
+      binary: "C:/Users/sasch/OneDrive/Studium/2324/Eff-C++/C++/CPP-Examples/A1-2/build/CMakeFiles/CMakeScratch/TryCompile-6fsbu7"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /W3 /GR /EHsc"
       CMAKE_EXE_LINKER_FLAGS: "/machine:X86"
@@ -187,39 +187,39 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/sasch/OneDrive/Studium/2324/Eff-C++/C++/CPP-Examples/A1-2/build/CMakeFiles/CMakeScratch/TryCompile-ch7elj'
+        Change Dir: 'C:/Users/sasch/OneDrive/Studium/2324/Eff-C++/C++/CPP-Examples/A1-2/build/CMakeFiles/CMakeScratch/TryCompile-6fsbu7'
         
-        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_f31db.vcxproj /p:Configuration=Debug /p:Platform=win32 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_09612.vcxproj /p:Configuration=Debug /p:Platform=win32 /p:VisualStudioVersion=17.0 /v:n
         MSBuild-Version 17.7.2+d6990bcfa für .NET Framework
-        Der Buildvorgang wurde am 21.10.2023 18:11:40 gestartet.
+        Der Buildvorgang wurde am 24.10.2023 10:00:29 gestartet.
         
-        Projekt "C:\\Users\\sasch\\OneDrive\\Studium\\2324\\Eff-C++\\C++\\CPP-Examples\\A1-2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ch7elj\\cmTC_f31db.vcxproj" auf Knoten "1" (Standardziele).
+        Projekt "C:\\Users\\sasch\\OneDrive\\Studium\\2324\\Eff-C++\\C++\\CPP-Examples\\A1-2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-6fsbu7\\cmTC_09612.vcxproj" auf Knoten "1" (Standardziele).
         PrepareForBuild:
-          Das Verzeichnis "cmTC_f31db.dir\\Debug\\" wird erstellt.
-          Das Verzeichnis "C:\\Users\\sasch\\OneDrive\\Studium\\2324\\Eff-C++\\C++\\CPP-Examples\\A1-2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ch7elj\\Debug\\" wird erstellt.
-          Das Verzeichnis "cmTC_f31db.dir\\Debug\\cmTC_f31db.tlog\\" wird erstellt.
+          Das Verzeichnis "cmTC_09612.dir\\Debug\\" wird erstellt.
+          Das Verzeichnis "C:\\Users\\sasch\\OneDrive\\Studium\\2324\\Eff-C++\\C++\\CPP-Examples\\A1-2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-6fsbu7\\Debug\\" wird erstellt.
+          Das Verzeichnis "cmTC_09612.dir\\Debug\\cmTC_09612.tlog\\" wird erstellt.
         InitializeBuildStatus:
-          "cmTC_f31db.dir\\Debug\\cmTC_f31db.tlog\\unsuccessfulbuild" wird erstellt, da "AlwaysCreate" angegeben wurde.
-          Aktualisieren des Timestamps von "cmTC_f31db.dir\\Debug\\cmTC_f31db.tlog\\unsuccessfulbuild".
+          "cmTC_09612.dir\\Debug\\cmTC_09612.tlog\\unsuccessfulbuild" wird erstellt, da "AlwaysCreate" angegeben wurde.
+          Aktualisieren des Timestamps von "cmTC_09612.dir\\Debug\\cmTC_09612.tlog\\unsuccessfulbuild".
         ClCompile:
-          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.37.32822\\bin\\HostX86\\x86\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /Oy- /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_f31db.dir\\Debug\\\\" /Fd"cmTC_f31db.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TP /analyze- /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.27\\Modules\\CMakeCXXCompilerABI.cpp"
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.37.32822\\bin\\HostX86\\x86\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /Oy- /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_09612.dir\\Debug\\\\" /Fd"cmTC_09612.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TP /analyze- /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.27\\Modules\\CMakeCXXCompilerABI.cpp"
           Microsoft (R) C/C++-Optimierungscompiler Version 19.37.32824 für x86
           CMakeCXXCompilerABI.cpp
           Copyright (C) Microsoft Corporation. Alle Rechte vorbehalten.
-          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /Oy- /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_f31db.dir\\Debug\\\\" /Fd"cmTC_f31db.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TP /analyze- /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.27\\Modules\\CMakeCXXCompilerABI.cpp"
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /Oy- /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_09612.dir\\Debug\\\\" /Fd"cmTC_09612.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TP /analyze- /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.27\\Modules\\CMakeCXXCompilerABI.cpp"
         Link:
-          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.37.32822\\bin\\HostX86\\x86\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\sasch\\OneDrive\\Studium\\2324\\Eff-C++\\C++\\CPP-Examples\\A1-2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ch7elj\\Debug\\cmTC_f31db.exe" /INCREMENTAL /ILK:"cmTC_f31db.dir\\Debug\\cmTC_f31db.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/sasch/OneDrive/Studium/2324/Eff-C++/C++/CPP-Examples/A1-2/build/CMakeFiles/CMakeScratch/TryCompile-ch7elj/Debug/cmTC_f31db.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/sasch/OneDrive/Studium/2324/Eff-C++/C++/CPP-Examples/A1-2/build/CMakeFiles/CMakeScratch/TryCompile-ch7elj/Debug/cmTC_f31db.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_f31db.dir\\Debug\\CMakeCXXCompilerABI.obj
-          cmTC_f31db.vcxproj -> C:\\Users\\sasch\\OneDrive\\Studium\\2324\\Eff-C++\\C++\\CPP-Examples\\A1-2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ch7elj\\Debug\\cmTC_f31db.exe
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.37.32822\\bin\\HostX86\\x86\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\sasch\\OneDrive\\Studium\\2324\\Eff-C++\\C++\\CPP-Examples\\A1-2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-6fsbu7\\Debug\\cmTC_09612.exe" /INCREMENTAL /ILK:"cmTC_09612.dir\\Debug\\cmTC_09612.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/sasch/OneDrive/Studium/2324/Eff-C++/C++/CPP-Examples/A1-2/build/CMakeFiles/CMakeScratch/TryCompile-6fsbu7/Debug/cmTC_09612.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/sasch/OneDrive/Studium/2324/Eff-C++/C++/CPP-Examples/A1-2/build/CMakeFiles/CMakeScratch/TryCompile-6fsbu7/Debug/cmTC_09612.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_09612.dir\\Debug\\CMakeCXXCompilerABI.obj
+          cmTC_09612.vcxproj -> C:\\Users\\sasch\\OneDrive\\Studium\\2324\\Eff-C++\\C++\\CPP-Examples\\A1-2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-6fsbu7\\Debug\\cmTC_09612.exe
         FinalizeBuildStatus:
-          Die Datei "cmTC_f31db.dir\\Debug\\cmTC_f31db.tlog\\unsuccessfulbuild" wird gelöscht.
-          Aktualisieren des Timestamps von "cmTC_f31db.dir\\Debug\\cmTC_f31db.tlog\\cmTC_f31db.lastbuildstate".
-        Die Erstellung von Projekt "C:\\Users\\sasch\\OneDrive\\Studium\\2324\\Eff-C++\\C++\\CPP-Examples\\A1-2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ch7elj\\cmTC_f31db.vcxproj" ist abgeschlossen (Standardziele).
+          Die Datei "cmTC_09612.dir\\Debug\\cmTC_09612.tlog\\unsuccessfulbuild" wird gelöscht.
+          Aktualisieren des Timestamps von "cmTC_09612.dir\\Debug\\cmTC_09612.tlog\\cmTC_09612.lastbuildstate".
+        Die Erstellung von Projekt "C:\\Users\\sasch\\OneDrive\\Studium\\2324\\Eff-C++\\C++\\CPP-Examples\\A1-2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-6fsbu7\\cmTC_09612.vcxproj" ist abgeschlossen (Standardziele).
         
         Der Buildvorgang wurde erfolgreich ausgeführt.
             0 Warnung(en)
             0 Fehler
         
-        Verstrichene Zeit 00:00:01.07
+        Verstrichene Zeit 00:00:00.93
         
       exitCode: 0
 ...
