@@ -9,7 +9,7 @@ int main()
 
 
     // Test vector a
-    my::Vec3f a;
+    Vec3f<> a(1, 2, 3);
     my::Vec3f s;
 
     // Test vector b
