@@ -1,38 +1,22 @@
 #include <iostream>
 #include "test11.h"
-#include "vec3f.h"
+#include "vec.h"
 
 
 int main()
 {
     std::cout << "Hello, World!" << std::endl;
 
+    my::Vec<float, 3> vec(1.0f, 2.0f, 3.0f);
 
-    // Test vector a
-    Vec3f<> a(1, 2, 3);
-    my::Vec3f s;
-
-    // Test vector b
-    const my::Vec3f b(1, 2, 3);
-    const my::Vec3f c(1, 2, 3);
-
-    std::cout << "b == c is " << (b == c) << std::endl;
-
-    my::Vec3f y = b - c;
-    my::Vec3f z = -b;
-    size_t size = a.getSize();
-
-    a[1] = 4;
-
-    std::cout << "z = -b" << z[1] << std::endl;
-    std::cout << "Array Size: " << size << std::endl;
-    std::cout << "default_werte a " << a[1] << std::endl;
-    std::cout << "default_werte const " << b[0] << std::endl;
+    my::Vec<int,5> vec2(1, 2, 3,4,5);
+    std::cout << vec[0] << std::endl;
+    std::cout << vec2[0] << vec2[2] << std::endl;
     return 0;
 }
     // free funktion dot() calculates the scalar product of two Vectors
     // Use: float s = dot(Vec3f a, Vec3f b);
-    float dot(const my::Vec3f &v1, const my::Vec3f &v2)
+ /*    float dot(const my::Vec3f &v1, const my::Vec3f &v2)
     {
         return v1[0] * v2[0] + v1[1] * v2[1] + v1[2] * v2[2];
-    }
+    } */
