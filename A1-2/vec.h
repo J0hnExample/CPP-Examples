@@ -38,7 +38,7 @@ namespace my
         } */
 
 /*         // Writes 0 to the array if no arg is given
-        Vec3f(std::array<float, 3> arr) : arr(arr)
+        Vec(std::array<float, 3> arr) : arr(arr)
         {
             //
             this->arr[0] = (0);
@@ -58,7 +58,7 @@ namespace my
             return arr[i];
         }
 
-        // operator == and != to check two Vec3f objects
+        // operator == and != to check two Vec objects
         bool operator==(const Vec<T, N> &rhs) const
         {
             return arr == rhs.arr;
