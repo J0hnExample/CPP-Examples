@@ -20,6 +20,6 @@ int main()
     std::cout << "Short Tests\n" << std::endl;
     testVec<short, 1>();
 
-    std::cout << "Tests finished\n" << std::endl;
+    std::cout << "Test finished\n" << std::endl;
     return 0;
 }
