@@ -1,6 +1,8 @@
 #include <array>
 #include <type_traits>
 
+
+
 // C++20 concept rulz
 template <typename T>
 concept Numeric = std::is_arithmetic_v<T>;
@@ -19,9 +21,9 @@ namespace my
         // Constructor for N args of type T
         //Variadic Template
         template <typename... Args>
-        Vec(Args... args) : arr{args...}
+        Vec(Args... args) : arr{static_cast<T>(args)...}
         {
-            static_assert(sizeof...(args) == N, "Vec: wrong type of arguments");
+            //static_assert(sizeof...(args) == N, "Vec: wrong type of arguments");
         }
 
         // Returns the size of the array
@@ -29,37 +31,21 @@ namespace my
         {
             return N;
         }
-        // floats the array
-/*         Vec(float a = 0, float b = 0, float c = 0)
-        {
-            arr[0] = (a);
-            arr[1] = (b);
-            arr[2] = (c);
-        } */
-
-/*         // Writes 0 to the array if no arg is given
-        Vec(std::array<float, 3> arr) : arr(arr)
-        {
-            //
-            this->arr[0] = (0);
-            this->arr[1] = (0);
-            this->arr[2] = (0);
-        } */
 
        // Subscript operator (accessor) to access elements
-        T operator[](int i) const
+        T operator[](const int i) const
         {
             return arr[i];
         }
 
         // Subscript operator (mutator) to modify elements
-        T &operator[](int i)
+        T &operator[](const int i)
         {
             return arr[i];
         }
 
         // operator == and != to check two Vec objects
-        bool operator==(const Vec<T, N> &rhs) const
+        bool operator==(const Vec<T, N>& rhs) const
         {
             return arr == rhs.arr;
         }
@@ -96,7 +82,7 @@ namespace my
         // -Pre Operator
         Vec<T, N> operator-() const
         {
-            Vec<T, N> temp(*this);
+            Vec<T, N> temp( *this);
             for (int i = 0; i < N; i++)
             {
                 temp.arr[i] = -temp.arr[i];
@@ -104,4 +90,15 @@ namespace my
             return temp;
         }
     };
+}
+//Template dot funktion
+  template <typename T, int N>
+T dot(const my::Vec<T, N> &v1, const my::Vec<T, N> &v2)
+{
+    T result = 0;
+    for (int i = 0; i < N; i++)
+    {
+        result += v1[i] * v2[i];
+    }
+    return result;
 }

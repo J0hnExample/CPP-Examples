@@ -1,22 +1,25 @@
 #include <iostream>
-#include "test11.h"
-#include "vec.h"
 
+#include "testvec.h"
+
+using namespace my;
 
 int main()
 {
-    std::cout << "Hello, World!" << std::endl;
+    std::cout << "Generic Templat Tests\n\n" << std::endl;
 
-    my::Vec<float, 3> vec(1.0f, 2.0f, 3.0f);
 
-    my::Vec<int,5> vec2(1, 2, 3,4,5);
-    std::cout << vec[0] << std::endl;
-    std::cout << vec2[0] << vec2[2] << std::endl;
+    std::cout << "Float Tests\n" << std::endl;
+    testVec<float, 3>();
+    std::cout << "Int Tests\n" << std::endl;
+    testVec<int, 4>();
+    std::cout << "Long Tests\n" << std::endl;
+    testVec<long, 5>();
+    std::cout << "Double Tests\n" << std::endl;
+    testVec<double, 4>();
+    std::cout << "Short Tests\n" << std::endl;
+    testVec<short, 1>();
+
+    std::cout << "Tests finished\n" << std::endl;
     return 0;
 }
-    // free funktion dot() calculates the scalar product of two Vectors
-    // Use: float s = dot(Vec a, Vec b);
- /*    float dot(const my::Vec &v1, const my::Vec &v2)
-    {
-        return v1[0] * v2[0] + v1[1] * v2[1] + v1[2] * v2[2];
-    } */
