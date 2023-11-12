@@ -102,3 +102,37 @@ T dot(const my::Vec<T, N> &v1, const my::Vec<T, N> &v2)
     }
     return result;
 }
+
+//Template length function
+  template <typename T, int N>
+T length(const my::Vec<T, N> &v)
+{
+    T result = 0;
+    for (int i = 0; i < N; i++)
+    {
+        result += v[i] * v[i];
+    }
+    return sqrt(result);
+}
+
+//Template helper function
+  template <typename T, int N>
+void printVec(const my::Vec<T, N> &v)
+{
+    for (int i = 0; i < N; i++)
+    {
+        std::cout << v[i] << " " << length(v) << std::endl;
+    }
+}
+
+//Template operator << 
+template <typename T, int N>
+std::ostream& operator<<(std::ostream& os, const my::Vec<T, N>& vec) {
+    os << "(";
+    for (int i = 0; i < N; ++i) {
+        os << vec[i];
+        if (i < N - 1) os << ", ";
+    }
+    os << ")";
+    return os;
+}
