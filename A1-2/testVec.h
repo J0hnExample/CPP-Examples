@@ -51,6 +51,13 @@ void testVec()
         assert(a[1] == 2);
         cout << "passed." << endl;
     }
+        {
+        cout << " short read-only access to const object: ";
+        const Vec<short, 3> a(1, 2, 3);
+        // the next line will throw a compiler error if there is no proper "operator[] const"
+        assert(a[1] == 2);
+        cout << "passed." << endl;
+    }
     {
         cout << "  write access to a non-const object: ";
         Vec<float, 3> a(1, 2, 3);
@@ -61,6 +68,16 @@ void testVec()
     {
         cout << "  comparison: ";
         Vec<float, 4> a(1, 2, 3), b(1, 2, 3), c(1, 2, 9), d(4, 5, 6);
+        assert(a == b);
+        assert(a == a);
+        assert(a != c);
+        assert(b != d);
+        assert(!(a != b));
+        cout << "passed." << endl;
+    }
+        {
+        cout << " long comparison: ";
+        Vec<long, 4> a(1, 2, 3), b(1, 2, 3), c(1, 2, 9), d(4, 5, 6);
         assert(a == b);
         assert(a == a);
         assert(a != c);
@@ -90,6 +107,22 @@ void testVec()
         Vec<float, 3> x(0, 0, 0), y(1, 1, 1), z(2, 2, 2);
         x += y += z;
         assert((y == Vec<float, 3>(3, 3, 3)));
+        assert(x == y);
+        cout << "passed." << endl;
+    }
+        {
+        cout << " double addition: ";
+        Vec<double, 3> a(1, 2, 3), b(4, 5, 6);
+        a += b;
+        assert((a == Vec<double, 3>{5, 7, 9}));
+        auto c = a + Vec<double, 3>(1, 1, 1);
+        assert((c == Vec<double, 3>(6, 8, 10)));
+        Vec<double, 3> one(1, 1, 1), four(4, 4, 4);
+        one += one + one + one;
+        assert(one == four);
+        Vec<double, 3> x(0, 0, 0), y(1, 1, 1), z(2, 2, 2);
+        x += y += z;
+        assert((y == Vec<double, 3>(3, 3, 3)));
         assert(x == y);
         cout << "passed." << endl;
     }
