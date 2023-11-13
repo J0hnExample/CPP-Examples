@@ -11,7 +11,7 @@ using namespace std;
 //To_DO aufgabe 5
 int main()
 {
-    
+/*     
     //Create random seed
     random_device rd;
     //mix some hardware entrophy with the system time
@@ -22,40 +22,70 @@ int main()
     mt19937_64 gen(seed);
     //print out the random number
     cout << gen() << endl;
-
+ */
 
     //Create vector
-    vector<Vec<float, 3>> vectors;
+    std::vector<my::Vec<float, 3>> vectors;
+    generateRandomVectors(vectors, 10);
+
+    
     //stick 10 random floats beetween 0 and 100 in the vector
-    for (int i = 0; i < 10; i++)
+/*     for (int i = 0; i < 10; i++)
     {
         vectors.push_back(Vec<float, 3>(gen() % 100, gen() % 100, gen() % 100));
-    }
-    //Test no dingens schleife
-/*     generate_n(back_inserter(vectors), 10, []() {
-        static std::random_device rd;
-        static std::mt19937 gen(rd());
-        return my::Vec<float, 3>(gen() % 100, gen() % 100, gen() % 100);
-    });
- */
-    //print out the vector
-    for (int i = 0; i < 10; i++)
+    } */
+    //Test no dingens schleife mit random generator and funky seeds
+
+
+    //print out the vectors normal
+/*     for (int i = 0; i < 10; i++)
     {
         cout << vectors[i] << endl;
-    }
+        
+    } */
 
     //std::transform to increase every value in the vector by1
-    //Vector range, start vector range, end vector range, lambda function                       
-    transform(vectors.begin(), vectors.end(), vectors.begin(), [](Vec<float, 3> v) {
+    //Vector range, start vector range, end vector range, lambda function
+        transform(vectors.begin(), vectors.end(), vectors.begin(), [](Vec<float, 3> v) {
         return v + Vec<float, 3>(1, 1, 1);
     });
 
-    
+    //Sort the vector by <90.0 degree angle and >= 90.0 degree angle
+    std::stable_partition(vectors.begin(), vectors.end(), [](Vec<float, 3> vec) {
+        return length(vec) < 90.0f;
+    });
+
+    //sort by length with std::sort
+    sortVectors(vectors);
+
     //print out the vector
+    for (const auto& vec : vectors) {
+        printVec(vec);
+        std::cout << "-------------" << std::endl;  // Separate vectors
+    }                   
+
+    //get the median
+    
+    //printVec((vectors[vectors.size() / 2]+vectors[vectors.size() / 2])/2);
+        size_t size = vectors.size();
+    if (size % 2 == 0)
+    {
+        // If the size is even, take the average of the two middle elements
+        auto median = (length(vectors[size / 2 - 1]) + length(vectors[size / 2])) / 2.0f;
+        std::cout << "Median Length: " << median << "\n";
+    }
+    else
+    {
+        // If the size is odd, take the middle element
+        auto median = length(vectors[size / 2]);
+        std::cout << "Median Length: " << median << "\n";
+    }
+    
+/*     //print out the vector increased
     for (int i = 0; i < 10; i++)
     {
         cout << "Increase: " << vectors[i] << endl;
-    }
+    } */
 
     return 0;
 }

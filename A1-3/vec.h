@@ -1,6 +1,8 @@
 #include <array>
 #include <type_traits>
-
+#include <random>
+#include <chrono>
+#include <vector>
 
 
 // C++20 concept rulz
@@ -121,7 +123,7 @@ void printVec(const my::Vec<T, N> &v)
 {
     for (int i = 0; i < N; i++)
     {
-        std::cout << v[i] << " " << length(v) << std::endl;
+        std::cout << " " << length(v) << std::endl;
     }
 }
 
@@ -135,4 +137,22 @@ std::ostream& operator<<(std::ostream& os, const my::Vec<T, N>& vec) {
     }
     os << ")";
     return os;
+}
+
+template <typename T, int N>
+void generateRandomVectors(std::vector<my::Vec<T, N>>& vectors, size_t count) {
+    std::generate_n(std::back_inserter(vectors), count, []() {
+        static std::random_device rd;
+        static unsigned int seed = rd() ^ static_cast<unsigned int>(std::chrono::system_clock::now().time_since_epoch().count());
+        static std::mt19937_64 gen(seed);
+        return my::Vec<T, N>(gen() % 100, gen() % 100, gen() % 100);
+    });
+}
+template <typename T, int N>
+void sortVectors(std::vector<my::Vec<T, N>>& vectors)
+{
+    // Use std::sort to sort the vectors based on length
+    std::sort(vectors.begin(), vectors.end(), [](const my::Vec<T, N>& vec1, const my::Vec<T, N>& vec2) {
+        return length(vec1) < length(vec2);
+    });
 }
