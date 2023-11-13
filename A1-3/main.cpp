@@ -87,5 +87,17 @@ int main()
         cout << "Increase: " << vectors[i] << endl;
     } */
 
+    //Copy all vectors <80 into a new vector
+    std::vector<my::Vec<float, 3>> newVector;
+    std::copy_if(vectors.begin(), vectors.end(), std::back_inserter(newVector), [](my::Vec<float, 3> vec) {
+        return length(vec) < 80.0f;
+    });
+    //print out the new vector
+    std::cout << "New Vector: " << std::endl;
+    for (const auto& vec : newVector) {
+        printVec(vec);
+        std::cout << "-------------" << std::endl;
+    }
+
     return 0;
 }
