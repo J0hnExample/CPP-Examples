@@ -38,11 +38,11 @@ int main()
 
 
     //print out the vectors normal
-/*     for (int i = 0; i < 10; i++)
+    for (int i = 0; i < 10; i++)
     {
         cout << vectors[i] << endl;
         
-    } */
+    }
 
     //std::transform to increase every value in the vector by1
     //Vector range, start vector range, end vector range, lambda function
@@ -54,7 +54,11 @@ int main()
     std::stable_partition(vectors.begin(), vectors.end(), [](Vec<float, 3> vec) {
         return length(vec) < 90.0f;
     });
-
+    //print out the vector
+    for (const auto& vec : vectors) {
+        printVec(vec);
+        std::cout << "-------------" << std::endl;  // Separate vectors
+    } 
     //sort by length with std::sort
     sortVectors(vectors);
 

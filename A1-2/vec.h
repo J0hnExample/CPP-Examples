@@ -23,7 +23,7 @@ namespace my
         template <typename... Args>
         Vec(Args... args) : arr{static_cast<T>(args)...}
         {
-            //static_assert(sizeof...(args) == N, "Vec: wrong type of arguments");
+            //static_assert(sizeof...(args) == 0 || sizeof...(args) == N, "Vec: wrong type of arguments");
         }
 
         // Returns the size of the array
