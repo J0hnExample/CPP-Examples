@@ -84,9 +84,21 @@ public:
         //assert(index >= 0 && index < elements);  // in bounds
         return data[index];
     }
+    //operator für const objekte
+    const ValueT& operator[](size_t index) const {
+    
+    return data[index];
+}
 
     // 9. at(size_t)
     ValueT& at(size_t index) {
+        if (index >= elements) {
+            throw std::out_of_range("Index out of range");
+        }
+        return data[index];
+    }
+    //at für const objekte
+    const ValueT& at(size_t index) const {
         if (index >= elements) {
             throw std::out_of_range("Index out of range");
         }
