@@ -9,25 +9,21 @@ using namespace std;
 using namespace my;
 
 void test_21();
+void test_22();
 
 int main()
 {
-    //my tests
-    vector<double> v2(3, 3.14);
-            //Print out some vectors
-
-    cout << "Vector 3x 3.41 " << v2[0] << v2[1] << v2[2] << endl;
 
 
 
     cout << "Starting tests (2.1) --------------------" << endl;
 
-    test_21();
+    //test_21();
 
-#if 0
+
     cout << "Starting tests (2.2) --------------------" << endl;
     test_22();
-#endif
+
 
     cout << "End of tests ----------------------------" << endl;
 
