@@ -2,6 +2,10 @@
 
 #include <cassert>
 #include <cstddef> // for size_t anstelle fon std::size_t
+#include <cstdlib>
+#include <iostream>
+#include <utility>
+#include "trackmymoves.h"
 
 namespace my
 {
@@ -11,8 +15,8 @@ namespace my
     {
     private:
         ValueT *data_;             // Zeiger auf das Array der Elemente
-        size_t valid_elements_;    // Anzahl der gueltigen Elemente im Array
-        size_t reserved_elements_; // Anzahl der reservierten Elemente
+        std::size_t valid_elements_;    // Anzahl der gueltigen Elemente im Array
+        std::size_t reserved_elements_; // Anzahl der reservierten Elemente
 
     public:
         // Constuktors
@@ -37,12 +41,18 @@ namespace my
                 new (&data_[i]) ValueT(rhs.data_[i]);
             }
         }
-        // Move/Assign Constructor
+        // Move
         vector(vector &&rhs)
         {
             data_ = std::exchange(rhs.data_, nullptr);
             valid_elements_ = std::exchange(rhs.valid_elements_, 0);
             reserved_elements_ = std::exchange(rhs.reserved_elements_, 0);
+        }
+        // Assignment Operator
+        vector& operator=(vector copy)
+        {
+            copy.swap(*this);
+            return *this;
         }
 
 
@@ -70,7 +80,7 @@ namespace my
         {
             return data_[index];
         }
-        
+
         void swap(vector &rhs)
         {
             std::swap(data_, rhs.data_);
