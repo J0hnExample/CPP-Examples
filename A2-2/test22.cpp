@@ -72,6 +72,8 @@ int test_22()
         vector<Payload> v3(3, Payload(-1,-1,-1));
         assert(v3.size() == 3);
         assert(Payload::count() == v3.size());
+        //save payload count
+        int countPayload = Payload::count();
         //Move the vector v3 to v4 and check the v3 adress
         cout << "Move v3 Address: &" << &v3 << " cD:" << v3.currentdataAdress() << endl;
         vector<Payload> v4(std::move(v3));
@@ -80,7 +82,8 @@ int test_22()
         assert(v4.size() == 3);
         cout << "Move v3 Address after move: &" << &v3 << " cD:" << v3.currentdataAdress() << endl;
         cout << "Move v4 Address after move: &" << &v4 << " cD:" << v4.currentdataAdress() << endl;
-        cout << "Move Destructor/Size test ... " << endl;
+        //Check that Payload is not changed
+        assert(Payload::count() == countPayload);
         //check if the v4 value as the same in payload
         assert(v4[0] == Payload(-1,-1,-1));
         assert(v4[1] == Payload(-1,-1,-1));
