@@ -10,242 +10,83 @@ namespace my
     class vector
     {
     private:
-        ValueT *data;    // Zeiger auf das Array der Elemente
-        size_t elements; // Anzahl der Elemente im Array
-        size_t capacity_;
+        ValueT *data_;             // Zeiger auf das Array der Elemente
+        size_t valid_elements_;    // Anzahl der gueltigen Elemente im Array
+        size_t reserved_elements_; // Anzahl der reservierten Elemente
 
     public:
-        // swapy
-        friend void swap(vector &lhs, vector &rhs);
+        // Constuktors
 
-        // 1. bool empty()
-        bool empty() const
-        {
-            return elements == 0;
-        }
+        // Default Constructor
+        vector() : data_(nullptr), valid_elements_(0), reserved_elements_(0) {}
 
-        //size_t size() gibt gültige elemente zurück
-        size_t size() const
+        vector(size_t count, const ValueT &value = ValueT()) : valid_elements_(count), reserved_elements_(count)
         {
-            if ( data == nullptr )
+            data_ = static_cast<ValueT *>(malloc(reserved_elements_ * sizeof(ValueT)));
+            for (size_t i = 0; i < reserved_elements_; ++i)
             {
-                return 0;
-            }else
-            {
-                return elements;
+                new (&data_[i]) ValueT(value);
             }
         }
+        // Copy Constructor
+        vector(const vector &rhs) : valid_elements_(rhs.valid_elements_), reserved_elements_(rhs.reserved_elements_)
+        {
+            data_ = static_cast<ValueT *>(malloc(reserved_elements_ * sizeof(ValueT)));
+            for (size_t i = 0; i < valid_elements_; ++i)
+            {
+                new (&data_[i]) ValueT(rhs.data_[i]);
+            }
+        }
+        // Move/Assign Constructor
+        vector(vector &&rhs)
+        {
+            data_ = std::exchange(rhs.data_, nullptr);
+            valid_elements_ = std::exchange(rhs.valid_elements_, 0);
+            reserved_elements_ = std::exchange(rhs.reserved_elements_, 0);
+        }
+
+
         
-        //liefert die Anzahl der reservierten Elemente zurück.
-        size_t capacity() const
-        {
-            return capacity_;
-                        
-        }
-        void shrink_to_fit()
-        {
-            reserve(elements);
-        }
-        //Konstruktor by the rule of three
 
-        vector() : data(nullptr), elements(0) {}
-
-        vector(size_t count, const ValueT &value = ValueT()) : elements(count)
-        {
-            data = new ValueT[elements];
-            for (size_t i = 0; i < elements; ++i)
-            {
-                data[i] = value;
-            }
-        }
-        /*
-                // copy constructor
-                vector(const vector &rhs) : elements(rhs.elements)
-                {
-                    data = new ValueT[elements];
-                    for (size_t i = 0; i < elements; ++i)
-                    {
-                        data[i] = rhs.data[i];
-                    }
-                }
-
-                //assignment constructor
-                 vector& operator=(const vector& rhs) {
-                     if (this != &rhs) {
-                         delete[] data;
-                         elements = rhs.elements;
-                         data = new ValueT[elements];
-                         for (size_t i = 0; i < elements; ++i) {
-                             data[i] = rhs.data[i];
-                         }
-                     }
-                     return *this;
-                 }
-                     //move zuweisung/constructor
-                 vector& operator=(vector&& rhs) {
-                     if (this != &rhs) {
-                         delete[] data;
-                         elements = rhs.elements;
-                         data = rhs.data;
-                         rhs.data = nullptr;
-                         rhs.elements = 0;
-                     }
-                     return *this;
-                 } */
-
-        // move zuweisung/constructor jetzt mit swap geschmack
-
-        // copy with swap
-        vector operator=(vector rhs)
-        {
-            swap(*this, rhs);
-            return *this;
-        }
-
-        /*         // swap assagnment constructor
-                vector& operator=(vector rhs)
-                {
-                    vector temp(rhs);
-                    temp.swap(*this);
-                    swap(*this, rhs);
-                } */
-        // swap move constructor
-        vector operator=(vector &&rhs)
-        {
-            : vector();
-            /* swap(elements, rhs.elements);
-            swap(data, rhs.data); */
-            swap(*this, rhs);
-            return *this;
-        }
-
-        // 4. Destruktor
+        // Destructor
         ~vector()
         {
-            delete[] data;
-        }
-        //
-
-        // clear() bleibt so
-        void clear()
-        {
-            delete[] data;
-            data = nullptr;
-            elements = 0;
-        }
-
-        void reserve(size_t new_capacity)
-        {
-            if (new_capacity > capacity_)
+            for (size_t i = 0; i < valid_elements_; ++i)
             {
-                ValueT *new_data = static_cast<ValueT *>(std::malloc(new_capacity * sizeof(ValueT)));
-
-                // Kopiere die vorhandenen Daten in den neuen Speicher
-                std::copy(data, data + elements, new_data);
-
-                delete[] data;
-                data = new_data;
-                capacity_ = new_capacity;
+                data_[i].~ValueT();
             }
+            free(data_);
         }
+        // Returns Size with valid elements
+        size_t size() const { return valid_elements_; }
 
-
-        //  push_back jetzt mit extra speicher
-        void push_back(const ValueT &value)
-        {
-            if (elements == capacity_)
-            {
-                
-                size_t new_capacity = (capacity_ == 0) ? 1 : capacity_ * 2;
-                ValueT *newData = new ValueT[new_capacity];
-
-                // Kopierem der elemente
-                for (size_t i = 0; i < elements; ++i)
-                {
-                    newData[i] = data[i];
-                }
-
-                // Freigebe den alten Speicher
-                delete[] data;
-
-                // 
-                data = newData;
-                capacity_ = new_capacity;
-            }
-
-
-            data[elements] = value;
-            ++elements;
-        }
-        
-
-        ValueT pop_back()
-        {
-            // Überprüfe, ob der Vektor nicht leer ist
-            if (elements > 0)
-            {
-                // Hole das letzte Element
-                ValueT lastElement = data[elements - 1];
-
-                // Reduziere die Anzahl der Elemente
-                --elements;
-
-                // Gib das letzte Element zurück
-                return lastElement;
-            }
-            else
-            {
-                return ValueT(); // Standardwert für den Fall, dass der Vektor leer ist
-            }
-        }
-
-        // 8. operator[](size_t)
+        //at operator
         ValueT &operator[](size_t index)
         {
-            // assert(index >= 0 && index < elements);  // in bounds
-            return data[index];
+            return data_[index];
         }
-        // operator für const objekte
+
         const ValueT &operator[](size_t index) const
         {
-            return data[index];
+            return data_[index];
+        }
+        
+        void swap(vector &rhs)
+        {
+            std::swap(data_, rhs.data_);
+            std::swap(valid_elements_, rhs.valid_elements_);
+            std::swap(reserved_elements_, rhs.reserved_elements_);
         }
 
-        // 9. at(size_t)
-        ValueT &at(size_t index)
-        {
-            if (index >= elements)
-            {
-                throw std::out_of_range("Index out of range");
-            }
-            return data[index];
-        }
-        // at für const objekte
-        const ValueT &at(size_t index) const
-        {
-            if (index >= elements)
-            {
-                throw std::out_of_range("Index out of range");
-            }
-            return data[index];
-        }
 
-        // 10. Kopieren und Zuweisen verboten
-        /*     vector(const vector<ValueT>&) = delete;
-            vector<ValueT>& operator=(const vector<ValueT>&) = delete; */
+        // Friend Declaration
+        friend void swap(vector &lhs, vector &rhs);
     };
-
-} // namespace my
-
-// swap
-namespace my
-{
 
     template <typename ValueT>
     void swap(vector<ValueT> &lhs, vector<ValueT> &rhs)
     {
-        swap(lhs.data, rhs.data);
-        swap(lhs.elements, rhs.elements);
+        lhs.swap(rhs);
     }
 
 } // namespace my

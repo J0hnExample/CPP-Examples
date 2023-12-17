@@ -12,65 +12,55 @@ void test_22()
 
 
     
-        using my::vector;
+    using my::vector;
     using std::cout;
     using std::endl;
 
     {
-      
-    my::vector<Payload> v;
-    v.reserve(100);
 
-    // Die Größe sollte nach dem Reservieren 0 sein
-    assert(v.size() == 0);
-    }
-    {
-        cout << "Construction/Destruction, size() ... ";
+        //Creating default vector
         vector<Payload> v0;
         assert(v0.size() == 0);
         assert(Payload::count() == 0);
-
-        {
-            // Are the elements created?
-            vector<Payload> v1(3, Payload(-1, -1, -1));
-            assert(v1.size() == 3);
-            assert(Payload::count() == v1.size());
-        }
-
-        // Are the elements destroyed?
-        assert(Payload::count() == 0);
-        cout << "done." << endl;
+        //creating vector with 3 elements
+        vector<Payload> v1(3, Payload(-1,-1,-1));
+        assert(v1.size() == 3);
+        assert(Payload::count() == v1.size());
+        
     }
+    //Copy Constructor test
     {
-        cout << "pop_back() with empty vector... ";
-        vector<double> v;
-
-
-        double lastElement = v.pop_back();
-        assert(v.size() == 0);
-        assert(lastElement == double()); // Default-constructed double
-        cout << "done." << endl;
+        cout << "Copy Constructor/size test ... ";
+        vector<Payload> v2(3, Payload(-1,-1,-1));
+        assert(v2.size() == 3);
+        assert(Payload::count() == v2.size());
+        //Copy the vector v2 to v3 
+        vector<Payload> v3 = v2;
+        cout << "Copy" << endl;
+        assert(v3.size() == 3);
+        assert(v2.size() == v3.size());
+        //Check for Values
+        assert(v3[0] == v2[0]);
+        assert(v3[1] == v2[1]);
+        assert(v3[2] == v2[2]);
+        cout << "Value test ... ";
+        cout << " done." << endl;
     }
-
-/*     {
-        cout << "multiple pop_back() calls... ";
-        vector<std::string> v;
-        v.push_back("one");
-        v.push_back("two");
-        v.push_back("three");
-
-        std::string lastElement1 = v.pop_back();
-        std::string lastElement2 = v.pop_back();
-        std::string lastElement3 = v.pop_back();
-
-        // Vector should be empty after multiple pop_back calls
-        assert(v.size() == 0);
-
-        // Check if the popped elements are correct
-        assert(lastElement1 == "three");
-        assert(lastElement2 == "two");
-        assert(lastElement3 == "one");
-
-        cout << "done." << endl;
-    } */
+    //Move Constructor Move the vector v3 to v4
+    {
+        cout << "Move Constructor/size test ... ";
+        vector<Payload> v3(3, Payload(-1,-1,-1));
+        assert(v3.size() == 3);
+        assert(Payload::count() == v3.size());
+        //Move the vector v3 to v4
+        vector<Payload> v4(std::move(v3));
+        assert(v3.size() == 0);
+        cout << "Destructor test ... ";
+        //check if the v4 value as the same in payload
+        assert(v4[0] == Payload(-1,-1,-1));
+        assert(v4[1] == Payload(-1,-1,-1));
+        assert(v4[2] == Payload(-1,-1,-1));
+        cout << "Value test ... ";
+        cout << " done." << endl;
+    }
 }
