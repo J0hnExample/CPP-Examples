@@ -9,14 +9,16 @@
 
 
 
-void test_21()
+int test_21()
 {
+    int testCount = 0;
     using my::vector;
     using std::cout;
     using std::endl;
-
+    
 
     {
+        testCount++;
         cout << "construction/destruction, size() ... ";
         vector<Payload> v0;
         assert(v0.size() == 0);
@@ -33,22 +35,32 @@ void test_21()
         assert(Payload::count() == 0);
         cout << " done." << endl;
     }
-#if 0 
 
-    {
+
+    {   
+        
         cout << "push_back(), pop_back(), size(), empty() ... ";
         {
             vector<Payload> v;
+            cout << "Payload::count() == " << Payload::count() << endl;
             assert(v.size() == 0);
+            cout << "Payload::count() == " << Payload::count() << endl;
             assert(v.empty());
+            cout << "Payload::count() == " << Payload::count() << endl;
 
+            
             v.push_back(Payload(0,0,0));
+            cout << "Payload::count() == " << Payload::count() << endl;
             v.push_back(Payload(1,1,1));
+            cout << "Payload::count() == " << Payload::count() << endl;
             v.push_back(Payload(2,2,2));
+            
             assert(v.size() == 3);
             assert(!v.empty());
+            cout << "Payload::count() == " << Payload::count() << endl;
             assert(Payload::count() == 3);
 
+            
             assert(v.pop_back() == Payload(2,2,2));
             assert(v.size() == 2);
             assert(Payload::count() == 2);
@@ -61,7 +73,8 @@ void test_21()
             assert(v.size() == 0);
             assert(v.empty());
             assert(Payload::count() == 0);
-        }
+        }  
+        testCount++;
         assert(Payload::count() == 0);
         cout << " done." << endl;
     }
@@ -82,6 +95,7 @@ void test_21()
             v[1] = Payload(-1,-1,-1);
             assert(v[1] == Payload(-1,-1,-1));
         }
+        testCount++;
         cout << " done." << endl;
     }
 
@@ -109,6 +123,7 @@ void test_21()
                 cout << "exception: " << ex.what();
             }
         }
+        testCount++;
         cout << " done." << endl;
     }
 
@@ -128,6 +143,7 @@ void test_21()
             assert(vconst[0] == Payload(1,2,3));
             assert(vconst.at(0) == Payload(1,2,3));
         }
+        testCount++;
         cout << " done." << endl;
     }
 
@@ -136,6 +152,6 @@ void test_21()
         vector<Payload> v1;
         vector<Payload> v2 = v1;
     }
-#endif
+    return testCount;
 
 } // test21()

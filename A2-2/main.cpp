@@ -10,26 +10,28 @@
 
 using namespace my;
 
-void test_21();
-void test_22();
+int test_21();
+int test_22();
 
 int main()
 {
     using std::cout;
     using std::endl;
-
-
+    int testCount = 0;
+    int testResults = 0;
     cout << "Starting tests (2.1) --------------------" << endl;
 
-    test_21();
-
+    testCount += test_21();
+    testResults++;
 
     std::cout << "\nStarting tests (2.2) --------------------" << endl;
     
-    test_22();
-
+    testCount += test_22();
+    testResults++;
 
     std::cout << "End of tests ----------------------------" << endl;
-
+    std::cout << "  " << testResults << " Test Driver succeeded." << endl;
+    std::cout << "Total tests Done: " << testCount << endl;
+    
     return 0;
 }
