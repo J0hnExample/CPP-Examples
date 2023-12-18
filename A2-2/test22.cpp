@@ -93,7 +93,6 @@ int test_22()
     }
     //Assignment Operator test
     {   
-
         cout << "Assignment Operator/size test ... " << endl;
         vector<Payload> v5(3, Payload(-1,-1,-1));
         assert(v5.size() == 3);

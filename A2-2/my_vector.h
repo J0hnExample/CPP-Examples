@@ -68,13 +68,14 @@ namespace my
             ValueT *new_data_ = static_cast<ValueT *>(std::malloc(new_reserved_elements * sizeof(ValueT)));
             if (data_ != nullptr)
             {
-                // Kopiere die vorhandenen Daten in den neuen Speicher
+                
                 for (size_t i = 0; i < valid_elements_; ++i)
                 {
-                    new (&new_data_[i]) ValueT(std::move(data_[i]));
+                    new (&new_data_[i]) ValueT((data_[i]));//mit und ohne std::move
                     data_[i].~ValueT();
                 }
-                
+                //ohne std::move copy 89 move 13
+                //mit std::move copy 71 move 31
                 
             }
             free(data_);
@@ -96,7 +97,7 @@ namespace my
         //pop_back return last element
         ValueT pop_back()
         {   
-            //Schönes Beispiel wann preincrement oder postincrement verwendet werden kann
+            //Schönes Beispiel wann pre-increment oder postincrement verwendet werden kann
             //valid_elements_--;
             ValueT &last_element = data_[--valid_elements_];
             ValueT temp_element = last_element;
@@ -106,7 +107,7 @@ namespace my
         //push_back
         void push_back(const ValueT &value)
         {
-            if (valid_elements_ >= reserved_elements_)
+            if (valid_elements_ >= reserved_elements_ )
             {
                 size_t new_capacity = (reserved_elements_ == 0) ? 1 : reserved_elements_ * 2;
                 reserve(new_capacity);
