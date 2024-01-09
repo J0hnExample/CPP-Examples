@@ -41,6 +41,7 @@ namespace my
         // Move
         vector(vector &&rhs) noexcept
         {
+            std::cout << "Move Constructor used\n" << std::endl;
             data_ = std::exchange(rhs.data_, nullptr);
             valid_elements_ = std::exchange(rhs.valid_elements_, 0);
             reserved_elements_ = std::exchange(rhs.reserved_elements_, 0);
@@ -71,7 +72,7 @@ namespace my
                 
                 for (size_t i = 0; i < valid_elements_; ++i)
                 {
-                    new (&new_data_[i]) ValueT((data_[i]));//mit und ohne std::move
+                    new (&new_data_[i]) ValueT(std::move(data_[i]));//mit und ohne std::move
                     data_[i].~ValueT();
                 }
                 //ohne std::move copy 89 move 13
@@ -123,7 +124,7 @@ namespace my
                 data_[i].~ValueT();
             }
             valid_elements_ = 0;
-            data_ = nullptr;
+            //data_ = nullptr;
         }
         //at operator
         ValueT &operator[](size_t index)
