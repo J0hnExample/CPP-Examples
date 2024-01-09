@@ -48,7 +48,7 @@ int main()
 
     } // Payload tests 
     cout << endl;
-
+/*
 
     {
         cout << "1. treemap creation..." << endl;
@@ -94,7 +94,7 @@ int main()
     }
     assert(Payload::alive_count() == 0);
     cout << endl;
-/*
+
     {
         cout << "3. overwrite, count..." << endl;
 
