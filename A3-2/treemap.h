@@ -105,8 +105,52 @@ namespace my
     T &
     treemap<K, T>::operator[](const K &key)
     {
-       // return dummy value
-        return *new T();   
+        node_ptr foundNode = find_(key);
+
+        //key not found
+        if (!foundNode)
+        {
+            //aktueller knoten null und parent null
+            node_ptr parent = nullptr;
+            node_ptr current = root_;
+
+            while (current) //Position im baum für neuen knoten finden
+            {
+                parent = current;
+                if (key < current->value_.first)
+                {
+                    current = current->left_;
+                }
+                else
+                {
+                    current = current->right_;
+                }
+            }
+
+            node_ptr newNode = std::make_shared<node>(key, T(), parent);
+
+            if (!parent)
+            {
+                // The tree is empty
+                root_ = newNode;
+            }
+            else if (key < parent->value_.first)
+            {
+                parent->left_ = newNode;
+            }
+            else
+            {
+                parent->right_ = newNode;
+            }
+
+            count_++;
+            return newNode->value_.second;
+        }
+        else
+        {
+            // Key exists, return the associated value
+            return foundNode->value_.second;
+        }
     }
 
     // number of elements in map (nodes in tree)
@@ -128,31 +172,32 @@ namespace my
         // find mit find_
         node_ptr foundNode = find_(key);
         node_ptr parent = nullptr;
-        
+
         if (foundNode)
         {
             return make_pair(foundNode, false);
         }
-        
-        // neuer Knoten weil nix im tree - 3 agumente? 
+
+        // neuer Knoten weil nix im tree - 3 agumente?
         node_ptr newNode = std::make_shared<node>(key, mapped, parent);
 
-        if(!parent){
-            root_ = newNode;
-        } else if (key < parent->value.first)
+        if (!parent)
         {
-           parent->left_ = newNode;
-        } else {
+            root_ = newNode;
+        }
+        else if (key < parent->value_.first)
+        {
+            parent->left_ = newNode;
+        }
+        else
+        {
             parent->right_ = newNode;
         }
 
         count_++;
         return make_pair(newNode, true);
-        
-
     }
 
-    
     // find element with specific key. returns end() if not found.
     template <typename K, typename T>
     typename treemap<K, T>::node_ptr
@@ -160,12 +205,18 @@ namespace my
     {
         node_ptr current = root_;
 
-        while(current){
-            if(key < current->value_.first){
+        while (current)
+        {
+            if (key < current->value_.first)
+            {
                 current = current->left_;
-            }else if(key > current->value_.first){
+            }
+            else if (key > current->value_.first)
+            {
                 current = current->right_;
-            }else{
+            }
+            else
+            {
                 return current;
             }
         }
