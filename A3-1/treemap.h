@@ -95,7 +95,8 @@ namespace my
     void
     treemap<K, T>::clear()
     {
-        // TODO
+        root_ = nullptr;
+        count_ = 0;
     }
 
     // random write access to value by key
@@ -104,8 +105,8 @@ namespace my
     T &
     treemap<K, T>::operator[](const K &key)
     {
-        // return dummy value
-        return *new T();
+       // return dummy value
+        return *new T();   
     }
 
     // number of elements in map (nodes in tree)
@@ -133,8 +134,8 @@ namespace my
             return make_pair(foundNode, false);
         }
         
-        // neuer Knoten weil nix im tree
-        node_ptr newNode = std::make_shared<node>(key, mapped);
+        // neuer Knoten weil nix im tree - 3 agumente? 
+        node_ptr newNode = std::make_shared<node>(key, mapped, parent);
 
         if(!parent){
             root_ = newNode;
@@ -160,9 +161,9 @@ namespace my
         node_ptr current = root_;
 
         while(current){
-            if(key < current->key){
+            if(key < current->value_.first){
                 current = current->left_;
-            }else if(key > current->key){
+            }else if(key > current->value_.first){
                 current = current->right_;
             }else{
                 return current;

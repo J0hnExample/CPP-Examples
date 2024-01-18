@@ -48,7 +48,7 @@ int main()
 
     } // Payload tests 
     cout << endl;
-/*
+
 
     {
         cout << "1. treemap creation..." << endl;
@@ -68,7 +68,7 @@ int main()
         cout << "done..." << endl;
     }
     cout << endl;
-
+/*
     {
         cout << "2. write, read, size..." << endl;
 
