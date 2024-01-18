@@ -68,15 +68,15 @@ int main()
         cout << "done..." << endl;
     }
     cout << endl;
-/*
+
     {
         cout << "2. write, read, size..." << endl;
 
         // if map is empty, count should return 0
         treemap<int, Payload> m;
-
-        // write (key, value) pair
+     // write (key, value) pair
         m[1] = Payload("Value1"); 
+
         assert(m.size() == 1);
         assert(Payload::alive_count() == 1); 
 
@@ -85,8 +85,11 @@ int main()
 
         // write another (key, value) pair
         m[2] = Payload("Value2"); 
+        
         assert(m.size() == 2);
+        
         assert(Payload::alive_count() == 2); 
+
         assert(m[1] == Payload("Value1"));
         assert(m[2] == Payload("Value2"));
 
@@ -136,7 +139,7 @@ int main()
     }
     assert(Payload::alive_count() == 0);
     cout << endl;
-*/
+
 
     cout << "seems it works!" << endl;;
 
